@@ -16,14 +16,12 @@ const handleClick = (event) => {
    
    let m = nilainya.current.value;
    let url = "https://api.github.com/users/" + m + "/repos"
-console.log(url);
 
  fetch(url)
       .then((response) => response.json())
       .then(data =>  {
 console.log(data);
 for(let u=0; u < data.length; u++){
-    console.log(data[u].full_name);
     isinow.push(data[u].full_name);
 }
 dispatch(fillinnow(isinow));
